@@ -1,0 +1,10 @@
+New files i've used are item.js route, views/item/listItem.handlebars, but i had to put createitem.handlebars 
+in views/user. 
+
+I edited main.js but the route for my listItem is in main.js. 
+
+A few problems i have are that my item routes take the route from user.js instead of item.js, and that my 
+list items take route from main.js. 
+
+
+Also for the list of items, it shows a table but does not show any details in the table.

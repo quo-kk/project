@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    *{
+    font-family: "Times New Roman", Times, serif;
+    }
+    #header{
+    font-size:35px;
+    margin-left:200px;
+    }
+    #new{
+    font-size:25px;
+    margin-left:200px;
+    }
+    hr {
+    clear: both;
+    border-top: solid #dedede;
+    border-width: 1px 0 0;
+    margin: 30px 0;
+    height: 0;
+    }
+    #featuredimage{
+    width:1000px;
+    height:500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #card{
+    height:300px;
+    width:1000px;
+    text-align:center
+    }
+    .grid{
+    margin-left:350px;
+    }
+    .card-text{
+    font-size:20px;
+    margin-right:-270px;
+    margin-top:-170px
+    }
+    .card-img-top{
+    height:300px;
+    width:300px;
+    }
+    #grid{
+    margin-left:250px;
+    }
+    
+    /* The sidebar menu */
+    .sidenav {
+    width: 160px; /* Set the width of the sidebar */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #666; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    border: solid 1px black;
+    margin-left: 200px;
+    float: left;
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #DDD;
+    display: block;
+    border: solid 1px black;
+    
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+
+    /* Style page content */
+    .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    }
+
+    .price {
+    color: grey;
+    font-size: 22px;
+    }
+
+    .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    }
+
+    .card button:hover {
+    opacity: 0.7;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-right: -20px;
+    }
+
+    /* Remove extra left and right margins, due to padding in columns */
+    .row {margin: 0 -5px;
+    margin-left: 50px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Style the counter cards */
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    }
+
+    /* Responsive columns - one column layout (vertical) on small screens */
+    @media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    }
+
+    .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 100px;
+        background-color: #666;
+        color: #dedede;
+        text-align: center;
+        display: flex;
+    }
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+
+<img src="" id = 'featuredimage' >
+
+
+
+<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+
+<h2 id="header">Featured</h2>
+
+<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+
+
+<div class="sidenav">
+   <a class="nav-link" href="">Home</a>
+   <a class="nav-link" href="">Kindergarten</a>
+   <a class="nav-link" href="">Primary</a>
+   <a class="nav-link" href="">Secondary</a>
+   <a class="nav-link" href="">Tertiary</a>
+   <a class="nav-link" href="">Stationery</a>
+   <a class="nav-link" href="">Others</a>
+</div>
+
+
+<div class = "row">
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+
+</div>
+
+<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+
+<h2 id="header">All Products</h2>
+
+<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+
+<div class = "row">
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    <div class = 'column'>
+        <div class="card">
+            <img src="" alt="image" style="width:100%">
+            <h1>Item</h1>
+            <p class="price">$19.99</p>
+            <p>Item Information</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+</div>
+</div>
+
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+
+</body>
+</html>

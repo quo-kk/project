@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <img class="logo" src="/img/logo.png">
+      <h3 class="text-center">Add an item</h3>
+      <form action="/user/createitem" method="post">
+        <div class="form-group">
+          <label for="name">Name of item</label>
+          <input type="text" class="form-control" name="name" value="{{name}}" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" name="price" class="form-control" value="{{price}}" required>
+        </div>
+        <div class="form-group">
+          <label for="productdes">Product Description</label>
+          <input type="text" name="itemdes" class="form-control" value="{{itemdes}}" required>
+        </div>
+        <div class="form-group">
+          <label for="otherinfo">Other Information</label>
+          <input type="text" name="otherinfo" class="form-control" value="{{otherinfo}}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
