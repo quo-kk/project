@@ -18,6 +18,21 @@ router.post('/createitem', (req,res) => {
 	})
 });
 
+router.put('/saveEditedItem/:id',(req,res)=>{
+    let {name, price, itemdes, otherinfo} = req.body;
+    Item.update({
+        name, 
+        price, 
+        itemdes, 
+        otherinfo
+    },{
+        where:{
+            id: req.params.id
+        }
+        }).then(()=>{
+        res.redirect('/item/listitem');
+    }).catch(err=>console.log(err));
+});
 
 module.exports = router;
 

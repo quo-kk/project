@@ -82,6 +82,8 @@ app.use(session({
 	saveUninitialized: false,
 }));
 
+app.use(methodOverride('_method'))
+
 // Initilize Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());

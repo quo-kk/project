@@ -73,11 +73,28 @@ router.get('/showCreateItem', (req, res) => {
 });
 
 router.get('/listCreateItem', (req, res) => {
-		let item = db.query('SELECT * FROM items')
-		res.render('item/listItem',{
-			item:item
+		Item.findAll({
+			raw: true
+		}).then((items) => {
+			res.render('item/listItem', {
+				items:items
+			});
+		}).catch(err => console.log(err));	
+	});
+
+router.get('/edit/:id',(req,res)=>{
+	Item.findOne({
+		where:{
+			id: req.params.id
+		}
+	}).then((items)=>{
+		res.render('item/edititem',{
+			items
 		});
+	}).catch(err=>console.log(err));
 });
+
+
 
 // Logout User
 router.get('/logout', (req, res) => {
