@@ -8,10 +8,13 @@ const Item = require('../models/Item');
 const alertMessage = require('../helpers/messenger');
 
 router.get('/', (req, res) => {
-	const title = 'Video Jotter';
-	res.render('index', {			// renders views/index.handlebars
-		title
-	})
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('index', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
 });
 
 

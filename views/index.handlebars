@@ -163,16 +163,44 @@
         margin-bottom: 20px;
     }
     }
-
-    .footer {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        margin-top: 100px;
-        background-color: #666;
-        color: #dedede;
+    
+	.text-primary{
+		color:black !important;
+	}
+	
+    .image{
+		height:150px;
+		width:150px;
+	}
+	.button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
         text-align: center;
-        display: flex;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+    .button:hover{
+        opacity:0.7;
+    }
+	.text-info-name{
+		font-size: 30px;
+        margin-top: 50px;
+		
+	}
+	.text-info-price{
+		font-size: 20px;
+	}
+    .card-body{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        margin-bottom: 50px;
     }
 </style>
 
@@ -203,78 +231,38 @@
    <a class="nav-link" href="">Others</a>
 </div>
 
-
-<div class = "row">
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    </div>
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    </div>
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    </div>
-
+<div class="container">
+{{#if items}}
+		{{#each items}}
+				<div class="card-body">
+						<div >
+							<img class ='image' src="{{otherinfo}}">
+						</div>
+						<div>
+							<h1 class="text-info-name">
+								{{name}}
+							</h1>
+						</div>
+						<div>
+							<p class="text-info-price">
+								${{price}}
+							</p>
+						</div>
+                        <div class='button'>
+                        <a href="/item/view/{{id}}" class="button">
+								View Items
+						</a>
+                        </div>
+				</div>
+		{{/each}}
+			</div>
+		</div>	
 </div>
 
-<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
+{{else}}
+	<h3>No Items</h3>
+{{/if}}
 
-<h2 id="header">All Products</h2>
-
-<hr style="width:75%; margin-left:12% !important; margin-right:30% !important;" />
-
-<div class = "row">
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    </div>
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    </div>
-    <div class = 'column'>
-        <div class="card">
-            <img src="" alt="image" style="width:100%">
-            <h1>Item</h1>
-            <p class="price">$19.99</p>
-            <p>Item Information</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-</div>
-</div>
-
-
-    <div class="footer">
-        <p>Footer</p>
-    </div>
 
 </body>
 </html>

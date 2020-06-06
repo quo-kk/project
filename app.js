@@ -9,12 +9,14 @@ const exphbs = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const methodOverride = require('method-override');
 const passport = require('passport');
+const nodemailer = require('nodemailer')
 
 // Load routes
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
 const videoRoute = require('./routes/video');
 const itemRoute = require('./routes/item');
+const emailRoute = require('./routes/email');
 
 
 const {formatDate} = require('./helpers/hbs'); 
@@ -114,6 +116,7 @@ app.use('/', mainRoute);	// uses main.js routing under ./routes
 app.use('/user', userRoute);
 app.use('/video', videoRoute);
 app.use('/item', itemRoute);
+app.use('/email', emailRoute);
 
 const port = 5000;
 

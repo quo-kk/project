@@ -77,4 +77,16 @@ router.put('/saveEditedItem/:id',(req,res)=>{
     }).catch(err=>console.log(err));
 });
 
+router.get('/view/:id',(req,res)=>{
+	Item.findOne({
+		where:{
+			id: req.params.id
+		}
+	}).then((items)=>{
+		res.render('item/viewitem',{
+			items
+		});
+	}).catch(err=>console.log(err));
+});
+
 module.exports = router;
