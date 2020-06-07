@@ -3,6 +3,7 @@ const user = require('../models/User');
 const video = require('../models/Video');
 const item = require('../models/Item');
 
+
 // If drop is true, all existing tables are dropped and recreated
 const setUpDB = (drop) => {
 	mySQLDB.authenticate()

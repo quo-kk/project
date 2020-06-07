@@ -3,6 +3,7 @@ const router = express.Router();
 const Item = require('../models/Item');
 const alertMessage = require('../helpers/messenger');
 
+
 router.post('/createitem', (req,res) => {
     let errors = [];
     let name = req.body.name;
@@ -86,7 +87,8 @@ router.get('/view/:id',(req,res)=>{
 		res.render('item/viewitem',{
 			items
 		});
-	}).catch(err=>console.log(err));
+    }).catch(err=>console.log(err));
+    
 });
 
 module.exports = router;
