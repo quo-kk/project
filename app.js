@@ -17,6 +17,7 @@ const userRoute = require('./routes/user');
 const videoRoute = require('./routes/video');
 const itemRoute = require('./routes/item');
 const emailRoute = require('./routes/email');
+const paymentRoute = require('./routes/payment');
 
 
 const {formatDate} = require('./helpers/hbs'); 
@@ -117,6 +118,7 @@ app.use('/user', userRoute);
 app.use('/video', videoRoute);
 app.use('/item', itemRoute);
 app.use('/email', emailRoute);
+app.use('/payment', paymentRoute);
 
 const port = 5000;
 
