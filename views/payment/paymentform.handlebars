@@ -98,8 +98,7 @@
   <div class="col-75"></div>
     <p class = 'header'>Payment Form</p>
     <div class="container">
-      <form method="POST" action="">
-
+      <form method="POST" action="/payment/createpayment">
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -147,7 +146,7 @@
             </div>
             <div class="form-group">
             <label for="expirymonth">Month Of Expiry</label>
-            <input type="text" class="form-control" name="expirymonth" value="{{expiryyear}}" required>
+            <input type="text" class="form-control" name="expirymonth" value="{{expirymonth}}" required>
             </div>
 
             <div class="row">

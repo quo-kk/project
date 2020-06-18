@@ -17,6 +17,85 @@ router.get('/', (req, res) => {
 	}).catch(err => console.log(err));	
 });
 
+router.get('/primary', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('primary', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/secondary', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('secondary', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/tertiary', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('tertiary', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/kindergarten', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('kindergarten', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/paper', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('paper', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/misc', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('misc', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/others', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('others', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
+
+router.get('/writing', (req, res) => {
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('writing', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
 
 /* 
 Exercise 1 solution
