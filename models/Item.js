@@ -14,6 +14,9 @@ const Item = db.define('item',{
     otherinfo:{
         type:Sequelize.STRING
     },
+    category:{
+        type:Sequelize.STRING
+    }
 });
 
 module.exports = Item;

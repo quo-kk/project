@@ -10,7 +10,8 @@ router.post('/createitem', (req,res) => {
     let price = req.body.price;
     let itemdes = req.body.itemdes
     let otherinfo = req.body.otherinfo;
-    Item.create({name, price, itemdes, otherinfo})
+    let category = req.body.category;
+    Item.create({name, price, itemdes, otherinfo,category})
     .then(user =>{
         alertMessage(res,'success',item.name+'added',true);
     })
@@ -63,12 +64,13 @@ router.get('/delete/:id',(req,res)=>{
 });
 
 router.put('/saveEditedItem/:id',(req,res)=>{
-    let {name, price, itemdes, otherinfo} = req.body;
+    let {name, price, itemdes, otherinfo, category} = req.body;
     Item.update({
         name, 
         price, 
         itemdes, 
-        otherinfo
+        otherinfo,
+        category
     },{
         where:{
             id: req.params.id

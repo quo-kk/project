@@ -19,6 +19,9 @@ router.get('/', (req, res) => {
 
 router.get('/primary', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'primary'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('primary', {
@@ -29,6 +32,9 @@ router.get('/primary', (req, res) => {
 
 router.get('/secondary', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'secondary'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('secondary', {
@@ -39,6 +45,9 @@ router.get('/secondary', (req, res) => {
 
 router.get('/tertiary', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'tertiary'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('tertiary', {
@@ -49,6 +58,9 @@ router.get('/tertiary', (req, res) => {
 
 router.get('/kindergarten', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'kindergarten'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('kindergarten', {
@@ -59,6 +71,9 @@ router.get('/kindergarten', (req, res) => {
 
 router.get('/paper', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'paper'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('paper', {
@@ -69,6 +84,9 @@ router.get('/paper', (req, res) => {
 
 router.get('/misc', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'misc'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('misc', {
@@ -79,6 +97,9 @@ router.get('/misc', (req, res) => {
 
 router.get('/others', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'others'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('others', {
@@ -89,6 +110,9 @@ router.get('/others', (req, res) => {
 
 router.get('/writing', (req, res) => {
 	Item.findAll({
+		where:{
+			category: 'writing'
+		},
 		raw: true
 	}).then((items) => {
 		res.render('writing', {
@@ -136,7 +160,13 @@ router.get('/about', (req, res) => {
 });
 
 router.get('/viewcart', (req, res) => {
-	res.render('viewcart');
+	Item.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('viewcart', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
 });
 
 // User Login Route

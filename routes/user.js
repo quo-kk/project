@@ -10,8 +10,8 @@ const alertMessage = require('../helpers/messenger');
 
 router.post('/createitem', (req,res) => {
     let errors = [];
-    let {name, price, itemdes, otherinfo} = req.body;
-    Item.create({name, price, itemdes, otherinfo})
+    let {name, price, itemdes, otherinfo, category} = req.body;
+    Item.create({name, price, itemdes, otherinfo, category})
     .then(user =>{
 		alertMessage(res,'success',name+'added',true);
 		res.redirect('/');
@@ -19,12 +19,13 @@ router.post('/createitem', (req,res) => {
 });
 
 router.put('/saveEditedItem/:id',(req,res)=>{
-    let {name, price, itemdes, otherinfo} = req.body;
+    let {name, price, itemdes, otherinfo, category} = req.body;
     Item.update({
         name, 
         price, 
         itemdes, 
-        otherinfo
+		otherinfo,
+		category
     },{
         where:{
             id: req.params.id
