@@ -18,6 +18,18 @@ router.post('/createitem', (req,res) => {
 	})
 });
 
+router.get('/viewprofile/:id', (req, res) => {
+	User.findOne({
+		where:{
+			id: req.params.id
+		}
+	}).then((items)=>{
+		res.render('user/viewprofile',{
+			items
+		});
+    }).catch(err=>console.log(err));
+});
+
 router.put('/saveEditedItem/:id',(req,res)=>{
     let {name, price, itemdes, otherinfo, category} = req.body;
     Item.update({

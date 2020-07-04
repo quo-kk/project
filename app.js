@@ -11,6 +11,8 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const nodemailer = require('nodemailer')
 
+
+
 // Load routes
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
@@ -18,6 +20,7 @@ const videoRoute = require('./routes/video');
 const itemRoute = require('./routes/item');
 const emailRoute = require('./routes/email');
 const paymentRoute = require('./routes/payment');
+const cartRoute = require('./routes/cart');
 
 
 const {formatDate} = require('./helpers/hbs'); 
@@ -119,6 +122,7 @@ app.use('/video', videoRoute);
 app.use('/item', itemRoute);
 app.use('/email', emailRoute);
 app.use('/payment', paymentRoute);
+app.use('/cart', cartRoute);
 
 const port = 5000;
 

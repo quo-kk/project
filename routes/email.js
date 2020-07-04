@@ -13,10 +13,10 @@ router.get('/email', (req,res) => {
             }
         });
         var mailOptions = {
-            from: 'koelkheng@gmail.com',
+          from: 'koelkheng@gmail.com',
             to: 'koel_kheng@hotmail.com',
             subject: 'Successful Order',
-            text: 'Your Order Was Successful!',
+            text: 'order details',
         };
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {

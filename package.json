@@ -18,7 +18,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.1.0",
     "express-mysql-session": "^2.1.4",
-    "express-session": "^1.15.6",
+    "express-session": "^1.17.1",
     "flash-messenger": "^1.1.1",
     "method-override": "^3.0.0",
     "moment": "^2.26.0",
@@ -26,6 +26,7 @@
     "nodemailer": "^6.4.8",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.21.7"
+    "sequelize": "^5.21.7",
+    "stripe": "^8.68.0"
   }
 }

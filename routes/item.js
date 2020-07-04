@@ -76,7 +76,7 @@ router.put('/saveEditedItem/:id',(req,res)=>{
             id: req.params.id
         }
         }).then(()=>{
-        res.redirect('/item//listCreateItem');
+        res.redirect('/item/listCreateItem');
     }).catch(err=>console.log(err));
 });
 

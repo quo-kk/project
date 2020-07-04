@@ -3,10 +3,11 @@ const db = require('../config/DBConfig');
 
 const Item = db.define('item',{
     name:{
-        type:Sequelize.STRING
+        type:Sequelize.STRING,
+        allowNull: false,
     },
     price:{
-        type:Sequelize.STRING
+        type:Sequelize.FLOAT,
     },
     itemdes:{
         type:Sequelize.STRING

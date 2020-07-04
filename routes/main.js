@@ -4,6 +4,7 @@ var mysql = require('mysql');
 const Sequelize = require('sequelize');
 const db = require('../config/DBConfig');
 const Item = require('../models/Item');
+const User = require('../models/User');
 
 const alertMessage = require('../helpers/messenger');
 
@@ -206,7 +207,15 @@ router.get('/edit/:id',(req,res)=>{
 	}).catch(err=>console.log(err));
 });
 
-
+router.get('/viewuser', (req, res) => {
+	User.findAll({
+		raw: true
+	}).then((items) => {
+		res.render('user/viewuser', {
+			items:items
+		});
+	}).catch(err => console.log(err));	
+});
 
 // Logout User
 router.get('/logout', (req, res) => {

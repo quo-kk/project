@@ -1,0 +1,87 @@
+<style>
+	.container{
+		margin-top: 100px;
+		height: 50px;
+	}
+	.text-primary{
+		color:black !important;
+	}
+	.image{
+		height:150px;
+		width:150px;
+	}
+	.button {
+        background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 10px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        cursor: pointer;
+		margin-top: 55px;
+    }
+	.text-info-name{
+		font-size: 20px;
+		margin-top: 55px;
+		margin-left: 100px;
+	}
+	.text-info-buttons{
+		margin-left: 100px;
+	}
+	.text-info-price{
+		font-size: 20px;
+		margin-top: 55px;
+		margin-left: 100px;
+	}
+	.text-info-des{
+		font-size: 20px;
+		margin-top: 55px;
+		margin-left: 100px;
+	}
+	.text-info-cat{
+		font-size: 20px;
+		margin-top: 55px;
+		margin-left: 100px;
+	}
+</style>
+
+<div class="container">
+{{#if items}}
+	<div class="card card-body">
+		<h3 class="text-primary">Users</h3>
+		{{#each items}}
+			<div class="card border-primary mb-2 w-100 mx-auto">
+				<div class="card-body">
+					<div class="row">
+						<div>
+							<p class="text-info-name">
+								{{name}}
+							</p>
+						</div>
+						<div>
+							<p class="text-info-price">
+								${{email}}
+							</p>
+						</div>
+						<div>
+							<p class="text-info-des">
+								{{password}}
+							</p>
+						</div>
+							</p>
+						</div>			
+					</div>
+				</div>
+			</div>
+		{{/each}}
+			</div>
+		</div>
+	</div>		
+</div>
+
+{{else}}
+	<h3>No Items</h3>
+{{/if}}
