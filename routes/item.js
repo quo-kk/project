@@ -8,7 +8,7 @@ router.post('/createitem', (req,res) => {
     let errors = [];
     let name = req.body.name;
     let price = req.body.price;
-    let itemdes = req.body.itemdes
+    let itemdes = req.body.itemdes;
     let otherinfo = req.body.otherinfo;
     let category = req.body.category;
     Item.create({name, price, itemdes, otherinfo,category})
@@ -90,7 +90,6 @@ router.get('/view/:id',(req,res)=>{
 			items
 		});
     }).catch(err=>console.log(err));
-    
 });
 
 module.exports = router;

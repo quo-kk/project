@@ -52,7 +52,7 @@ module.exports = router;
 // Login Form POST => /user/login
 router.post('/login', (req, res, next) => {
 	passport.authenticate('local', {
-		successRedirect: '/video/listVideos',           // Route to /video/listVideos URL
+		successRedirect: '/',           // Route to /video/listVideos URL
 		failureRedirect: '/showLogin',					// Route to /login URL
 		failureFlash: true
 		/*

@@ -22,6 +22,7 @@
     "flash-messenger": "^1.1.1",
     "method-override": "^3.0.0",
     "moment": "^2.26.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "nodemailer": "^6.4.8",
     "passport": "^0.4.1",

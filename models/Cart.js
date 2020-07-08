@@ -5,10 +5,6 @@ const Item = require('../models/Item');
 
 
 const Cart = db.define('cart',{
-    quantity:{
-        type:Sequelize.INTEGER,
-        defaultValue: 0,
-    },
     userId:{
         type: Sequelize.INTEGER,
         references:{
