@@ -31,17 +31,15 @@ router.post('/charge', (req, res) => {
   console.log("Your payment was successful")
   Order.create().then(user =>{
 		alertMessage(res,'success added',true);
-		res.redirect('/payment/paysuccess');
-	})
+    res.redirect('/payment/paysuccess');
+  })
 });
 
-router.get('/vieworder/:id', (req, res) => {
-    Order.findOne({
-      where:{
-        id: req.params.id
-      }
+router.get('/vieworder', (req, res) => {
+  Order.findAll({
+       raw:true
     }).then((items)=>{
-      res.render('/payment/vieworder',{
+      res.render('payment/vieworder',{
         items
       });
       }).catch(err=>console.log(err));

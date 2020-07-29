@@ -1,9 +1,25 @@
 <HTML>
     <body>
         <p>Your order was successful!</p>
-        <a href="/email/email" class="button">Email Confirmation</a>
         {{#if items}} 
-        {{items.status}}
+        {{#each items}}
+			<div class="card border-primary mb-2 w-100 mx-auto">
+				<div class="card-body">
+					<div class="row">
+						<div>
+							<p class="text-info-price">
+								{{id}}
+							</p>
+						</div>
+						<div>
+							<p class="text-info-des">
+								{{status}}
+							</p>
+						</div>			
+					</div>
+				</div>
+			</div>
+		{{/each}}
         {{/if}}
     </body>
 </HTML>

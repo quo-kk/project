@@ -11,7 +11,7 @@ const Cart = db.define('cart',{
             model: User,
             key: 'id',
         },
-        unique: 'user_product',
+        unique: 'userId',
     },
     productId:{
         type: Sequelize.INTEGER,
@@ -19,7 +19,7 @@ const Cart = db.define('cart',{
             model: Item,
             key: 'id',
         },
-        unique: 'user_product',
+        unique: 'productId',
     },
 });
 

@@ -17,6 +17,10 @@ const Item = db.define('item',{
     },
     category:{
         type:Sequelize.STRING
+    },
+    cart:{
+        type:Sequelize.STRING,
+        defaultValue: "No",
     }
 });
 

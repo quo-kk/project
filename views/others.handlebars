@@ -48,34 +48,39 @@
   margin-left:250px;
   }
   
-  /* The sidebar menu */
+   /* The sidebar menu */
   .sidenav {
-  width: 160px; /* Set the width of the sidebar */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #666; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  border: solid 1px black;
-  margin-left: 200px;
-  float: left;
+    width: 160px;
+    /* Set the width of the sidebar */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: white;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    border: solid 1px black;
+    margin-left: -65px;
+    float: left;
+    margin-right: 100px;
   }
 
   /* The navigation menu links */
   .sidenav a {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #DDD;
-  display: block;
-  border: solid 1px black;
-  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    border-width: thin;
   }
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-  color: #f1f1f1;
+    color: #C0C0C0;
   }
 
   /* Style page content */
@@ -377,13 +382,15 @@ function showSlides(n) {
 
 
 <div class="sidenav">
-   <a class="nav-link" href="/">Home</a>
-   <a class="nav-link" href="/kindergarten">Kindergarten</a>
-   <a class="nav-link" href="/primary">Primary</a>
-   <a class="nav-link" href="/secondary">Secondary</a>
-   <a class="nav-link" href="/tertiary">Tertiary</a>
-   <a class="nav-link" href="/stationery">Stationery</a>
-   <a class="nav-link" href="/others">Others</a>
+  <a class="nav-link" href="/">Home</a>
+  <a class="nav-link" href="/kindergarten">Kindergarten</a>
+  <a class="nav-link" href="/primary">Primary</a>
+  <a class="nav-link" href="/secondary">Secondary</a>
+  <a class="nav-link" href="/tertiary">Tertiary</a>
+  <a class="nav-link" href="/writing">Writing</a>
+  <a class="nav-link" href="/paper">Paper</a>
+  <a class="nav-link" href="/misc">Misc</a>
+  <a class="nav-link" href="/others">Others</a>
 </div>
 
 <div class="container">

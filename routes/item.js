@@ -18,7 +18,6 @@ router.post('/createitem', (req,res) => {
 });
 
 router.get('/listCreateItem', (req, res) => {
-        
         Item.findAll({
             raw: true
         }).then((items) => {
@@ -61,6 +60,46 @@ router.get('/delete/:id',(req,res)=>{
             alertMessage(res, 'danger', 'Unauthorised access to item', 'fa fa-times-rectangle-o', true);
         }    
     });
+});
+
+router.get('/addtocart/:id',(req,res)=>{
+    let {name, price, itemdes, otherinfo, category} = req.body;
+    let cart = 'yes'
+    let itemId = req.params.id
+    Item.update({
+        name, 
+        price, 
+        itemdes, 
+        otherinfo,
+        category,
+        cart
+    },{
+        where:{
+            id: itemId
+        }
+        }).then(()=>{
+        res.redirect('/');
+    }).catch(err=>console.log(err));
+});
+
+router.get('/removefromcart/:id',(req,res)=>{
+    let {name, price, itemdes, otherinfo, category} = req.body;
+    let cart = 'no'
+    let itemId = req.params.id
+    Item.update({
+        name, 
+        price, 
+        itemdes, 
+        otherinfo,
+        category,
+        cart
+    },{
+        where:{
+            id: itemId
+        }
+        }).then(()=>{
+        res.redirect('cart/viewcart');
+    }).catch(err=>console.log(err));
 });
 
 router.put('/saveEditedItem/:id',(req,res)=>{

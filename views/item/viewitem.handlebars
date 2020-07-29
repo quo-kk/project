@@ -72,7 +72,7 @@
         <p class = 'price'>${{items.price}}</p>
         <p class ='soldby'>Sold By</p>
         <p class='description'>{{items.itemdes}}</p>
-        <input type="submit" value="Add To Cart" class="btn btn-primary"/>
+        <a href="/item/addtocart/{{items.id}}" class="button">Add To Cart</a>
         <a href="/email/email" class="button">Confirm Order</a>
     </form>
         <form action="/payment/charge" method="POST">
