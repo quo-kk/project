@@ -20,18 +20,6 @@ router.get('/viewcart', (req, res) => {
 	}).catch(err => console.log(err));	
 });
 
-router.get('/edit/:id',(req,res)=>{
-	Item.findOne({
-		where:{
-			id: req.params.id
-		}
-	}).then((items)=>{
-		res.render('item/edititem',{
-			items
-		});
-	}).catch(err=>console.log(err));
-});
-
 router.get('/addtocart/:id',(req,res)=>{
     let {name, price, itemdes, otherinfo, category} = req.body;
     let cart = 'yes'

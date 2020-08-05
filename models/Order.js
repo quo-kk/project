@@ -10,7 +10,7 @@ const Order = db.define('order',{
     },
     status:{
         type: Sequelize.STRING,
-        defaultValue: "Received",
+        defaultValue: "Pending",
     },
 });
 

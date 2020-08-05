@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
         callback(null, './public/uploads/' + req.user.id + '/');
     },
     filename: (req, file, callback) => {
-        callback(null, path.extname(file.originalname));
+        callback(null, req.user.id + '-'+Date.now()+ path.extname(file.originalname));
     }
 });
 // Initialise Upload
@@ -21,16 +21,16 @@ const upload = multer({
 }).single('posterUpload'); // Must be the name as the HTML file upload input
 // Check File Type
 function checkFileType(file, callback) {
-    // Allowed file extensions
+// Allowed file extensions
     const filetypes = /jpeg|jpg|png|gif/;
-    // Test extension
+// Test extension
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    // Test mime
+// Test mime
     const mimetype = filetypes.test(file.mimetype);
     if (mimetype && extname) {
         return callback(null, true);
     } else {
-        callback({ message: 'Images Only' });
+        callback({message: 'Images Only'});
     }
 }
 module.exports = upload;

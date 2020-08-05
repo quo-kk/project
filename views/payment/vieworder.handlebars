@@ -1,25 +1,45 @@
 <HTML>
-    <body>
-        <p>Your order was successful!</p>
-        {{#if items}} 
-        {{#each items}}
-			<div class="card border-primary mb-2 w-100 mx-auto">
-				<div class="card-body">
-					<div class="row">
-						<div>
-							<p class="text-info-price">
-								{{id}}
-							</p>
-						</div>
-						<div>
-							<p class="text-info-des">
-								{{status}}
-							</p>
-						</div>			
-					</div>
+<style>
+	.text-info-price {
+		font-size: 20px;
+		margin-top: 30px;
+		margin-left: 100px;
+	}
+	.text-info-des{
+		font-size: 20px;
+		margin-top: 30px;
+		margin-left: 100px;
+	}
+</style>
+
+<body>
+	<h3>View Recent Orders</h3>
+	{{#if items}}
+	{{#each items}}
+	<div class="card border-primary mb-2 w-100 mx-auto">
+		<div class="card-body">
+			<div class="row">
+				<div>
+					<p class="text-info-price">
+						Order Id: {{id}}
+					</p>
+				</div>
+				<div>
+					<p class="text-info-des">
+						Current Status: {{status}}
+					</p>
+				</div>
+				<div>
+					<a href="/payment/status/{{id}}" class="button" data-toggle="confirmation"
+							   data-title="Did You Receive This Item?">
+								Received
+					</a>
 				</div>
 			</div>
-		{{/each}}
-        {{/if}}
-    </body>
+		</div>
+	</div>
+	{{/each}}
+	{{/if}}
+</body>
+
 </HTML>

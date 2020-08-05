@@ -45,5 +45,20 @@ router.get('/vieworder', (req, res) => {
       }).catch(err=>console.log(err));
 });
 
+router.get('/status/:id',(req,res)=>{
+  let {id} = req.body;
+  let status = 'Delivered'
+  let itemid = req.params.id
+  Order.update({
+    id,
+    status,
+  },{
+    where:{
+      id: itemid
+    }
+  }).then(() =>{
+    res.redirect('/payment/vieworder')
+  }).catch(err=>console.log(err));
+});
 
 module.exports = router;
